@@ -45,7 +45,7 @@ func (fs FS) NVMeClass() (NVMeClass, error) {
 
 	dirs, err := ioutil.ReadDir(path)
 	if err != nil {
-		return nil, fmt.Errorf("failed to list NVMe devices at %q: %v", path, err)
+		return nil, err
 	}
 
 	nc := make(NVMeClass, len(dirs))
